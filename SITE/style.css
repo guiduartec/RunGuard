@@ -196,6 +196,7 @@ margin-left: 30px;
 .corpo_filho button:hover {
 background-color: black;
 color: white;
+border: 2px solid white;
 }
 
 .corpo2 {
@@ -234,6 +235,11 @@ color: white;
     border-radius: 5%;
     box-shadow: 0 0 10px rgb(217, 216, 216);
     flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
 }
 
 .card p {
