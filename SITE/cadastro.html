@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CADASTRO | Runguard</title>
+  <link rel="stylesheet" href="style_cadastro_login.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
-    
+  <div class="boxcentralcadastro">
+    <div>
+      <h1>CADASTRO</h1>
+      <div class="boxinputscadastro">
+        <input type="text" id="input_nome" placeholder="Nome de usuário">
+        <i class='bx bxs-user'></i>
+      </div>
+
+      <div class="boxinputscadastro">
+        <select id="select_cargo">
+            <option value="0" selected disabled>Cargo</option>
+            <option value="1">Analista de dados</option>
+            <option value="2">Técnico de infraestrutura</option>
+        </select>
+        <i class='bx bxs-briefcase-alt-2'></i>
+      </div>
+
+      <div class="boxinputscadastro">
+        <select id="select_empresa">
+            <option value="0" selected disabled>Empresa</option>
+            <option value="1">Uber</option>
+            <option value="2">99</option>
+        </select>
+        <i class='bx bxs-building-house'></i>
+      </div>
+
+      <div class="boxinputscadastro">
+        <input type="text" id="input_email" placeholder="Email">
+        <i class='bx bx-envelope'></i>
+      </div>
+
+      <div class="boxinputscadastro">
+        <input type="password" id="input_senha" placeholder="Senha">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+      <div class="boxinputscadastro">
+        <input type="password" id="input_senha_confirmado" placeholder="Confirme sua Senha">
+        <i class='bx bx-lock-alt'></i>
+      </div>
+
+      <button onclick="cadastrar()" class="botaocadastro">Cadastrar</button>
+    </div>
+  </div>
 </body>
+
 </html>
