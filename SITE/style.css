@@ -239,6 +239,7 @@
         flex-direction: row;
     }
 
+
     .card img {
         width: 100px;
         height: 87px;
@@ -325,10 +326,14 @@
     header {
         background: #ffffff;
         height: 50px;
+        width: 100%;
         display: flex;
         align-items: center;
+        position: fixed;
+        z-index: 1;
         justify-content: space-between;
         padding-left: 10px;
+        padding-right: 10px;
         margin: 0 auto;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
@@ -349,6 +354,7 @@
     nav ul {
         display: flex;
         font-size: 12px;
+        padding-right: 10px;
     }
 
     nav ul li a {
@@ -560,9 +566,14 @@
     .servicos {
         color: white;
         display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        
+        justify-content: space-between;
+        flex-direction: row;
+        scroll-snap-type: x mandatory;
+        overflow: auto;
+    }
+
+    .grupo_cards{
+
     }
 
     .card img {
@@ -573,6 +584,7 @@
     .card {
         background-color: black;
         width: 200px;
+        height: fit-content;
         align-items: center;
         text-align: center;
         display: flex;
@@ -600,12 +612,13 @@
 
     .corpo4 {
         display: flex;
+        font-size: 15px;
         justify-content: space-around;
         align-items: center;
         background-color: #000000;
         text-align: center;
-        padding: 1%;
-        height: 50vh;
+        padding: 10%;
+        height: fit-content;
     }
 
     .corpo4 h3 span {
