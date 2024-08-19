@@ -1,5 +1,3 @@
-
-
 @media (min-width: 900px ){
     * {
         margin: 0;
@@ -573,8 +571,11 @@
     }
 
     .grupo_cards{
-
-    }
+        display: flex;
+        justify-content: space-between;
+        gap: 4rem;
+        flex-direction: row;
+      }
 
     .card img {
         width: 100px;
@@ -637,4 +638,3 @@
 
 
 }
-
