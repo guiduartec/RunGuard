@@ -171,7 +171,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        background-image: url("imagens/fundo.png");
+        background-image: url("../imagens/fundo.png");
         background-size: cover;
         flex-direction: column;
         color: white;
@@ -233,6 +233,13 @@
     .servicos {
         color: white;
         display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .grupo_cards{
+        display: flex;
+        width: 100%;
         justify-content: space-evenly;
         flex-direction: row;
     }
@@ -489,7 +496,7 @@
         display: flex;
         justify-content: center;
         text-align: center;
-        background-image: url("imagens/fundo.png");
+        background-image: url("../imagens/fundo.png");
         background-size: cover;
         flex-direction: column;
     }
@@ -511,7 +518,8 @@
         height: 60%;
         margin-left: 50px;
         text-align: justify;
-        
+        margin-bottom: 10%;
+        margin-top: 10%;
     }
 
     .corpo_filho h3 {
@@ -542,6 +550,7 @@
     .corpo2 {
         background: #000000;
         padding: 5%;
+        padding-bottom: 15%;
         height: max-content;
         display: flex;
         align-items: center;
@@ -558,6 +567,7 @@
         background-color: white;
         text-align: center;
         padding: 3%;
+        padding-bottom: 15%;
         height: fit-content;
     }
 
@@ -585,7 +595,7 @@
     .card {
         background-color: black;
         width: 200px;
-        height: fit-content;
+        height: 400px;
         align-items: center;
         text-align: center;
         display: flex;
