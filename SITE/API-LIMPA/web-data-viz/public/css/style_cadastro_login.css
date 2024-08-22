@@ -1,3 +1,5 @@
+@media(min-width: 900px){
+
 body {
     background-image: url("../imagens/cadastro_fundo.jpg");
     display: flex;
@@ -167,4 +169,96 @@ body {
     font-size: 20px;    
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
+}
 
+@media(max-width: 900px){
+
+    body {
+        background-image: url("../imagens/cadastro_fundo.jpg");
+        display: flex;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .boxcentralcadastro {
+        background-color: rgba(0, 0, 0, 0.226);
+        border: 2px solid rgba(255, 255, 255, 0.288);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+        width: 400px;
+        color: white;
+        text-align: center;
+        border-radius: 13px;
+        padding: 30px 40px;
+    }
+    
+    .boxcentralcadastro .boxinputscadastro {
+        position: relative;
+        width: 100%;
+        margin: 23px 0;
+    }
+    
+    .boxinputscadastro input {
+        width: 100%;
+        height: 3em;
+        background-color: transparent;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.288);
+        font-size: 19px;
+        color: white;
+        padding: 20px 45px 20px 20px;
+    }
+    
+    .boxinputscadastro select {
+        width: 100%;
+        height: 3em;
+        background-color: white;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.288);
+        font-size: 19px;
+        padding: 15px 45px 15px 20px;
+    }
+    
+    .boxinputscadastro option {
+        color: black;
+    }
+    
+    .boxinputscadastro input::placeholder {
+        color: white;
+    }
+    
+    .boxinputscadastro i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+    
+    .boxcentralcadastro .botaocadastro {
+        width: 80%;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        outline: none;
+        cursor: pointer;
+        font-size: 20px;    
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    }
+    
+    }
+    
