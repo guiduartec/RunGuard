@@ -241,11 +241,15 @@ header a {
 
     body {
         background-image: url("../imagens/cadastro_fundo.jpg");
-        display: flex;
+        /* display: flex;
         background-size: cover;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+        flex-direction: column; */
+        width: 100%;
+        height: 100%;
+        background-color: black;
     }
     
     * {
@@ -254,17 +258,111 @@ header a {
         box-sizing: border-box;
         font-family: Arial, Helvetica, sans-serif;
     }
+
+    /* HEADER */
+
+    header {
+        background: #ffffff;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        z-index: 1;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    header .logo {
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    nav{
+        padding-right: 10px;
+    }
+
+    nav .logo {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        font-size: 12px;
+        padding-right: 10px;
+        
+        list-style: none;
+    }
+
+    nav ul li a {
+        color: #000000;
+        display: block;
+        font-weight: 600;
+        padding: 8px;
+        transition: 0.2s;
+        border-radius: 30px;
+        text-decoration: none;
+    }
+    nav ul li a:hover {
+        background: #000000;
+        color: #fff;
+    }
+
+    .ativo{
+        margin-left: 10px;
+    }
+
+    #barra_nav{
+        display: none;
+    }
+
+    nav ul li a.ativo {
+        background: #070707;
+        color: #fff;
+    }
+
+    #botao_cadastro{
+        display: none;
+    }
+
+
+    .header a {
+        text-decoration: none;
+        color: #032030;
+    }
+
+    .imagem_logo{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    }
+
+    .imagem_container {
+        width: 70%;
+        margin-right: 200px;
+        height: auto;
+    }
+
+
+    /*FIM DA HEADER*/
+    .formulario{
+        margin-top: 50px
+    }
     
     .boxcentralcadastro {
         background-color: rgba(0, 0, 0, 0.226);
         border: 2px solid rgba(255, 255, 255, 0.288);
         backdrop-filter: blur(4px);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
-        width: 400px;
+        /* width: 400px; */
         color: white;
         text-align: center;
         border-radius: 13px;
         padding: 30px 40px;
+        /* margin-top: 50px; */
     }
     
     .boxcentralcadastro .boxinputscadastro {
@@ -275,7 +373,7 @@ header a {
     
     .boxinputscadastro input {
         width: 100%;
-        height: 3em;
+        /* height: 3em; */
         background-color: transparent;
         border: none;
         border-radius: 30px;
@@ -283,7 +381,7 @@ header a {
         border: 2px solid rgba(255, 255, 255, 0.288);
         font-size: 19px;
         color: white;
-        padding: 20px 45px 20px 20px;
+        padding: 10px 35px 10px 15px;
     }
     
     .boxinputscadastro select {
