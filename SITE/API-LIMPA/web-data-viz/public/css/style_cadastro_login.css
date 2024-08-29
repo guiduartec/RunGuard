@@ -292,8 +292,6 @@ header a {
     nav ul {
         display: flex;
         font-size: 12px;
-        padding-right: 10px;
-        
         list-style: none;
     }
 
@@ -348,6 +346,8 @@ header a {
 
 
     /*FIM DA HEADER*/
+    /* CADASTRO */
+
     .formulario{
         margin-top: 50px
     }
@@ -423,6 +423,95 @@ header a {
         font-size: 20px;    
         box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     }
+
+    /* LOGIN */
+
+    html{
+        height: 100%;
+    }
+
+    .formulario{
+        margin-top: 50px
+    }
+    .formulario a{
+        color: white;
+    }
+    
+    .boxcentrallogin {
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.226);
+        border: 2px solid rgba(255, 255, 255, 0.288);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+        align-content: center;
+        /* width: 400px; */
+        color: white;
+        text-align: center;
+        border-radius: 13px;
+        padding: 30px 40px;
+        /* margin-top: 50px; */
+    }
+    
+    .boxcentrallogin .boxinputslogin {
+        position: relative;
+        width: 100%;
+        margin: 23px 0;
+    }
+    
+    .boxinputslogin input {
+        width: 100%;
+        /* height: 3em; */
+        background-color: transparent;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.288);
+        font-size: 19px;
+        color: white;
+        padding: 10px 35px 10px 15px;
+    }
+    
+    .boxinputslogin select {
+        width: 100%;
+        height: 3em;
+        background-color: white;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.288);
+        font-size: 19px;
+        padding: 15px 45px 15px 20px;
+    }
+    
+    .boxinputslogin option {
+        color: black;
+    }
+    
+    .boxinputslogin input::placeholder {
+        color: white;
+    }
+    
+    .boxinputslogin i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+    
+    .boxcentrallogin .botaologin {
+        margin-bottom: 10px;
+        width: 80%;
+        height: 40px;
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        outline: none;
+        cursor: pointer;
+        font-size: 20px;    
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    }
+
     
     }
     
