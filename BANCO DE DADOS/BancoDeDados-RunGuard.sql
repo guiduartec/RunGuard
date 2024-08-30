@@ -16,7 +16,7 @@ idUsuario int primary key auto_increment,
 nome_usuario varchar(45),
 email_usuario varchar(45) unique,
 senha_usuario varchar(45),
-cargo varchar(45),
+codigo int,
 fkEmpresa_usuario int,
     constraint fkEmpresaUsuario foreign key (fkEmpresa_usuario) references empresa (idEmpresa)
 );
@@ -30,12 +30,11 @@ fkEmpresa_equipamento int,
     constraint fkEmpresaEquipamento foreign key (fkEmpresa_equipamento) references empresa (idEmpresa)
 );
 
-drop table dados;
 create table dados (
 idDados int primary key auto_increment,
-cpu_porcent decimal(20,2),
-memoria_porcent decimal(20,2),
-memoria_usada decimal(20,2),
+cpu_porcent decimal(20,0),
+memoria_porcent decimal(20,0),
+memoria_usada decimal(20,0),
 dtHora datetime default current_timestamp,
 fkEquipamento int,
     constraint fkEquipamentoDados foreign key (fkEquipamento) references equipamento (idEquipamento)
@@ -51,15 +50,15 @@ insert into equipamento values
 (default, 'M3', 1),
 (default, 'M4', 1);
 
-select * from equipamento;
+select * from dados;
 
-drop view Monitoramento;
 CREATE VIEW Monitoramento as
 SELECT 
     d.idDados AS ID,
     CONCAT(d.cpu_porcent, "%") AS "Porcentagem CPU",
     CONCAT(d.memoria_porcent, "%") AS "Porcentagem Memoria",
     CONCAT(d.memoria_usada, "GB") AS "Memoria usada",
+    CONCAT(d.disco_porcent_usado, "%") AS "Porcentagem de Disco Usada",
     d.dtHora AS "Data",
     e.nome_equipamento AS Equipamento
 FROM 
@@ -68,3 +67,5 @@ JOIN
     equipamento as e ON d.fkEquipamento = e.idEquipamento;
 
 SELECT * FROM Monitoramento;
+
+SELECT cpu_porcent FROM dados WHERE fkEquipamento = 1 ORDER BY idDados DESC
