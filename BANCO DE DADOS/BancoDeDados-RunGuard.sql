@@ -30,11 +30,12 @@ fkEmpresa_equipamento int,
     constraint fkEmpresaEquipamento foreign key (fkEmpresa_equipamento) references empresa (idEmpresa)
 );
 
+drop table dados;
 create table dados (
 idDados int primary key auto_increment,
-cpu_porcent double,
-memoria_porcent double,
-memoria_usada double,
+cpu_porcent decimal(20,2),
+memoria_porcent decimal(20,2),
+memoria_usada decimal(20,2),
 dtHora datetime default current_timestamp,
 fkEquipamento int,
     constraint fkEquipamentoDados foreign key (fkEquipamento) references equipamento (idEquipamento)
@@ -50,13 +51,15 @@ insert into equipamento values
 (default, 'M3', 1),
 (default, 'M4', 1);
 
+select * from equipamento;
+
+drop view Monitoramento;
 CREATE VIEW Monitoramento as
 SELECT 
     d.idDados AS ID,
     CONCAT(d.cpu_porcent, "%") AS "Porcentagem CPU",
     CONCAT(d.memoria_porcent, "%") AS "Porcentagem Memoria",
     CONCAT(d.memoria_usada, "GB") AS "Memoria usada",
-    CONCAT(d.disco_porcent_usado, "%") AS "Porcentagem de Disco Usada",
     d.dtHora AS "Data",
     e.nome_equipamento AS Equipamento
 FROM 
