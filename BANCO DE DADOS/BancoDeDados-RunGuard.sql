@@ -32,9 +32,9 @@ fkEmpresa_equipamento int,
 
 create table dados (
 idDados int primary key auto_increment,
-cpu_porcent decimal(20,2),
-memoria_porcent decimal(20,2),
-memoria_usada decimal(20,2),
+cpu_porcent decimal(20,1),
+memoria_porcent decimal(20,1),
+memoria_usada decimal(20,1),
 dtHora datetime default current_timestamp,
 fkEquipamento int,
     constraint fkEquipamentoDados foreign key (fkEquipamento) references equipamento (idEquipamento)

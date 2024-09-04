@@ -22,6 +22,8 @@ run = True
 def byte_para_gb(byte):
     return byte / (1024 ** 3)
 
+tempo = int(input("Digite o intevalo de tempo que você quer entre os cadastros: "))
+
 # Loop para capturar os dados e cadastrar no Banco de Dados
 while run:
     print('=======================')
@@ -40,7 +42,7 @@ while run:
     print(f'Total de memória usada: {memoria.used} GB')
 
     # Faz as inserções no banco de dados passando os componentes
-    sql = "INSERT INTO dados (cpu_porcent, memoria_porcent,memoria_usada, fkEquipamento) VALUES (%s, %s, %s, 2)"
+    sql = "INSERT INTO dados (cpu_porcent, memoria_porcent,memoria_usada, fkEquipamento) VALUES (%s, %s, %s, 4)"
 
     # Captura os valores
     val = (cpu,memoria.percent,memoria_usada_formatada)
@@ -50,4 +52,4 @@ while run:
 
     mydb.commit()
 
-    time.sleep(2)
+    time.sleep(tempo)

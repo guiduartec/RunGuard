@@ -130,6 +130,8 @@ def monitoramento_realTime():
         print("Métrica não existente no sistema!")
         time.sleep(4)
         return monitoramento_realTime()
+
+    tempo = int(input("Digite o intervalo entre as leituras: "))
     
     mycursor.execute("SELECT idEquipamento FROM equipamento WHERE nome_equipamento = %s", [maquina])
     equipamento_id_resultado = mycursor.fetchone()
@@ -162,7 +164,7 @@ def monitoramento_realTime():
 
             mydb.commit()
 
-            time.sleep(2)
+            time.sleep(tempo)
     except:
         KeyboardInterrupt
         monitoramento_realTime()
