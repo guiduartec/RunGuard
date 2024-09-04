@@ -32,9 +32,9 @@ fkEmpresa_equipamento int,
 
 create table dados (
 idDados int primary key auto_increment,
-cpu_porcent decimal(20,0),
-memoria_porcent decimal(20,0),
-memoria_usada decimal(20,0),
+cpu_porcent decimal(20,2),
+memoria_porcent decimal(20,2),
+memoria_usada decimal(20,2),
 dtHora datetime default current_timestamp,
 fkEquipamento int,
     constraint fkEquipamentoDados foreign key (fkEquipamento) references equipamento (idEquipamento)
@@ -68,4 +68,6 @@ JOIN
 
 SELECT * FROM Monitoramento;
 
-SELECT cpu_porcent FROM dados WHERE fkEquipamento = 1 ORDER BY idDados DESC
+SELECT * FROM dados;
+
+select * from usuario;

@@ -50,8 +50,8 @@
 			<div class="boxinputscadastro">
 				<select id="select_cargo">
 					<option value="0" selected disabled>Cargo</option>
-					<option value="Analista de Dados">Analista de dados</option>
-					<option value="Técnico em Infraestrutura">Técnico de infraestrutura</option>
+					<option value=2>Analista de dados</option>
+					<option value=1>Técnico de infraestrutura</option>
 				</select>
 				<i class='bx bxs-briefcase-alt-2'></i>
 			</div>
@@ -97,7 +97,7 @@
 		// Agora vá para o método fetch logo abaixo
 		var nomeVar = input_nome.value;
 		var emailVar = input_email.value;
-		var cargoVar = select_cargo.value;
+		var codigoVar = select_cargo.value;
 		var senhaVar = input_senha.value;
 		var confirmacaoSenhaVar = input_senha_confirmado.value;
 		var idEmpresaVincular = select_empresa.value;
@@ -144,7 +144,7 @@
 				nomeServer: nomeVar,
 				emailServer: emailVar,
 				senhaServer: senhaVar,
-				cargoServer: cargoVar,
+				codigoServer: codigoVar,
 				idEmpresaVincularServer: idEmpresaVincular
 			}),
 		})

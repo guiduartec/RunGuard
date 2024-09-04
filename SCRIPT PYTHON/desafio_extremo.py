@@ -12,7 +12,6 @@ import time
 import mysql.connector
 import os
 from getpass import getpass
-from hashlib import md5
 
 # Conexão com o Banco de Dados
 mydb = mysql.connector.connect(
@@ -66,11 +65,9 @@ def registrar():
         print("Código inválido!")
         time.sleep(4)
         return
-    
-    # Criptografando a senha com MD5
-    hash_senha = md5(senha.encode()).hexdigest()
 
-    mycursor.execute("INSERT INTO usuario (email_usuario, senha_usuario, codigo) VALUES (%s,%s,%s)", (email,hash_senha,codigo))
+
+    mycursor.execute("INSERT INTO usuario (email_usuario, senha_usuario, codigo) VALUES (%s,%s,%s)", (email,senha,codigo))
 
     mydb.commit()
 
@@ -84,10 +81,7 @@ def entrar():
     email_recebido = input("Digite seu email: ")
     senha_recebida = getpass("Digite a sua senha: ")
 
-    # Criptografo a senha que o Usuário digitou para comparar com a senha salva no Banco
-    hash_senha_login = md5(senha_recebida.encode()).hexdigest()
-
-    mycursor.execute("SELECT codigo FROM usuario WHERE email_usuario = %s AND senha_usuario = %s", (email_recebido,hash_senha_login))
+    mycursor.execute("SELECT codigo FROM usuario WHERE email_usuario = %s AND senha_usuario = %s", (email_recebido,senha_recebida))
     resultado = mycursor.fetchone()
 
     if resultado:
@@ -152,7 +146,7 @@ def monitoramento_realTime():
                     time.sleep(4)
                     return monitoramento_realTime()
                 else:
-                    mycursor.execute(f"SELECT round(cpu_porcent,1) FROM dados WHERE fkEquipamento = {equipamento_id} ORDER BY idDados DESC")
+                    mycursor.execute(f"SELECT cpu_porcent FROM dados WHERE fkEquipamento = {equipamento_id} ORDER BY idDados DESC")
                     cpu_resultado_select = mycursor.fetchall()
                     print(f'O valor da CPU está em: {cpu_resultado_select[0][0]}%\n')
             elif componente == 'memoria':
