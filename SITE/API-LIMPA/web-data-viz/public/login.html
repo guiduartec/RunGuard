@@ -72,7 +72,7 @@
                 <div class="container">
                     <div class="card card-login">
 
-                        <button class="botaologin" onclick="entrar()">Entrar</button>
+                        <button class="botaologin" onclick="dash()">Entrar</button>
                     </div>
                     <a href="cadastro.html">Não tem conta? Clique aqui e cadastre-se!</a>
                     <div id="div_erros_login"></div>
@@ -87,6 +87,9 @@
 
 <script>
 
+    function dash(){
+        window.location = "./dashs.html"
+    }
 
     function entrar() {
         aguardar();
